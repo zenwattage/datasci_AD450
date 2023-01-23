@@ -37,7 +37,8 @@
 
 SELECT
 COALESCE(coffee_import."1995" + coffee_import."1996" + coffee_import."1997" + coffee_import."1998" + coffee_import."1999", 0) AS import_years,
- COALESCE(coffee_export."1995" + coffee_export."1996" + coffee_export."1997" + coffee_export."1998" + coffee_export."1999", 0) AS export_years
+ COALESCE(coffee_export."1995" + coffee_export."1996" + coffee_export."1997" + coffee_export."1998" + coffee_export."1999", 0) AS export_years,
+ coffee_import."1995" + coffee_import."1996" + coffee_import."1997" + coffee_import."1998" + coffee_import."1999"+ coffee_export."1995" + coffee_export."1996" + coffee_export."1997" + coffee_export."1998" + coffee_export."1999" AS combined_years
 -- coffee_import."1995" + coffee_import."1996" + coffee_import."1997" + coffee_import."1998" + coffee_import."1999",
 -- coffee_export."1995" + coffee_export."1996" + coffee_export."1997" + coffee_export."1998" + coffee_export."1999"
 FROM coffee_import
