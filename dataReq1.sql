@@ -2,10 +2,10 @@
 -- Your output should contain country, rank, combined production from 1999 to 2004
 SELECT
 	country,
-	"1999_2000"+"2000_2001"+"2001_2002"+"2002_2003"+"2003_2004" AS volume,
+	("1999_2000"+"2000_2001"+"2001_2002"+"2002_2003"+"2003_2004") AS volume,
 	RANK() OVER (
-		PARTITION BY country
-		ORDER BY total_production
+		PARTITION BY coffee_type
+		ORDER BY total_production DESC
 	)
 FROM coffee_production
 ORDER BY volume DESC
